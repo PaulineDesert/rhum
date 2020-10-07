@@ -25,7 +25,7 @@
 					aria-expanded="false">Connexion</a>
 				<div class="dropdown-menu">
 					<a class="dropdown-item" href="#">Client</a>
-					<a class="dropdown-item" href="#">Admin</a>
+					<a class="dropdown-item" href="connexionForm">Admin</a>
 				</div>
 			</li>
 		</ul>
