@@ -1,17 +1,17 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Pages extends CI_Controller {
+class Pages extends CI_Controller
+{
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('customer_model');
+        $this->load->helper('url_helper');
+    }
 
-	public function __construct()
-        {
-                parent::__construct();
-                $this->load->model('customer_model');
-                $this->load->helper('url_helper');
-        }
-
-//Create new Customer
-	public function connect()
-	{
+    //Create new Customer
+    public function connect()
+    {
         $this->load->helper('form');
         $this->load->library('form_validation');
 
@@ -26,3 +26,4 @@ class Pages extends CI_Controller {
             $this->load->view('templates/footer');
         }
     }
+}
