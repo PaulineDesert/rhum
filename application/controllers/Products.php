@@ -29,7 +29,7 @@ class Products extends CI_Controller {
                 $data['product'] = $data['product']['title'];
 
                 $this->load->view('templates/header', $data);
-                $this->load->view('news/view', $data);
+                $this->load->view('pages/view', $data);
                 $this->load->view('templates/footer');
         }
 }

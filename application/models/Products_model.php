@@ -6,7 +6,7 @@ class Products_model extends CI_Model {
                 $this->load->database();
         }
         
-        public function get_product($productType = 'blanc')
+        public function get_product($productType = NULL)
         {
                 if ($productType === 'blanc')
                 {
