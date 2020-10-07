@@ -1,18 +1,18 @@
-<div class="bg-warning">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-        
-        <div class="nav-item">
-            <button type="button" class="btn btn-warning">Mentions légales</button>
-        </div>
-        <div class="nav-item">
-            <button type="button" class="btn btn-warning">CGV</button>
-        </div>
-        <div class="nav-item">
-            <button type="button" class="btn btn-warning">Contact</button>
-        </div>
-        </ul>
-    </div>
+<div class="card text-center">
+  <div class="card-header">
+	<p class="h3">A propos de nous...</p>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Cave à Rhum</h5>
+    <p class="card-text">Description de la société Cave à Rhum</p>
+	<a href="#" class="btn btn-primary">Mentions légales</a>
+    <a href="#" class="btn btn-primary">C G V</a>
+    <a href="#" class="btn btn-primary">Contact</a>
+
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
 </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
