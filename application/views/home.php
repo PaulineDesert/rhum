@@ -1,1 +1,0 @@
-<p>Page d'acceuil en cours de création</p>

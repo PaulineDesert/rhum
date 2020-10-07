@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+		<link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css">
 
     <title><?php echo $title; ?></title>
-    <link rel="stylesheet" href=""
+    <link rel="stylesheet" href="" />
   </head>
   <body>
   <!-- Navbar -->
@@ -31,7 +33,7 @@
         <a class="nav-link" href="#">Vieux</a>
       </li>               
       <li class="nav-item">
-        <a class="nav-link" href="#">Arrangée</a>
+        <a class="nav-link" href="#">Arrangé</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Dark</a>
