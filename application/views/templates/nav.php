@@ -1,6 +1,6 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-dark text-light">
-	<a class="navbar-brand text-danger" href="#">La cave à rhum</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark text-light sticky-top mb-5">
+	<a class="navbar-brand text-danger" href="<?php echo site_url(''); ?>">La cave à rhum</a>
 	<!--Ajouter un logo quand on en aura un-->
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,25 +9,28 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="nav nav-pills nav-fill">
 			<li class="nav-item">
-				<a class="nav-link text-warning" href="#">Rhums blancs</a>
+				<a class="nav-link text-warning" href="<?php echo site_url('product'); ?>">Rhums blancs</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-white" href="#">Rhums ambrés</a>
+				<a class="nav-link text-white" href="<?php echo site_url('product'); ?>">Rhums ambrés</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-warning" href="#">Rhums vieux</a>
+				<a class="nav-link text-warning" href="<?php echo site_url('product'); ?>">Rhums vieux</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-white" href="#">Rhums arrangés</a>
+				<a class="nav-link text-white" href="<?php echo site_url('product'); ?>">Rhums arrangés</a>
 			</li>
+			<div class="d-block text-right">
 			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+				<a class="nav-link dropdown-toggle text-warning" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
 					aria-expanded="false">Connexion</a>
-				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">Client</a>
-					<a class="dropdown-item" href="connexionForm">Admin</a>
+				<div class="dropdown-menu bg-dark">
+					<a class="dropdown-item text-warning" href="<?php echo site_url('logOrRegistForm'); ?>">Client</a>
+					<a class="dropdown-item text-warning" href="<?php echo site_url('loginAdmin'); ?>">Admin</a>
 				</div>
 			</li>
+			</div>
+			
 		</ul>
 	</div>
 </nav>
