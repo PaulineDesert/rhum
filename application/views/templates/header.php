@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <title><?php echo $title; ?></title>
-    <link rel="stylesheet" href=""
+    <link rel="stylesheet" href="">
   </head>
   <body>
   <!-- Navbar -->
@@ -42,9 +42,9 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Over Proof</a>
       </li>      
-        <li class="nav-item">
-            <button type="button" class="btn btn-warning">Connexion</button>
-        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.php/connexionForm">Connexion</a>
+      </li>
     </ul>
   </div>
 </nav>
