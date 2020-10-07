@@ -25,10 +25,5 @@ class Pages extends CI_Controller
             $this->load->view('pages/logOrRegistForm');
             $this->load->view('templates/footer');
         }
-<<<<<<< HEAD
-        }
-}
-=======
     }
 }
->>>>>>> 10edb62849beec79f136481292b2bd6ee56f4122

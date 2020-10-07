@@ -1,4 +1,10 @@
 <div class="container">
+	<!-- Title -->
+<header>
+  <div class="container text-center" data-aos="fade-down">
+    <p class="h1"><b class="text-warning">Connectez-vous</b><br>pour accéder à l'interface administrateur</p>
+  </div>
+</header>
 	<div class="row mt-5">
 		<div class="col-sm-4 mx-auto">
 			<form>

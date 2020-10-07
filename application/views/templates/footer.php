@@ -114,9 +114,11 @@ Integer vestibulum ultricies lacinia. Quisque eget arcu molestie, ullamcorper li
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body text-justify">
-					 <p class="h3">Contactez-nous !</p>
-					 <p>Service client 24/24 - 7/7 : 06 25 26 85 78</p>
+          <div class="modal-body text-center">
+					 <p class="h2">Contactez-nous !</p>
+					 <p>Service client 24/24 - 7/7.</p>
+					 <p>N'hésitez-pas à contacter <strong class="text-danger">Pauline</strong> et <strong class="text-danger">Noémie</strong><br />(ben oui, Jérôme est sourd...désolé)<br /> au</p>
+					 <p class="h1">06 25 26 85 78</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
