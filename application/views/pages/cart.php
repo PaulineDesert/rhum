@@ -1,0 +1,1 @@
+<p>Vue panier</p>
