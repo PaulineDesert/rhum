@@ -11,7 +11,7 @@
 		<!-- <link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css"> -->
 
     <title><?php echo $title; ?></title>
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
   </head>
   <body>
   

@@ -11,7 +11,7 @@ class Products extends CI_Controller {
         public function index()
         {
                 $data['product'] = $this->product_model->get_product();
-                $data['title'] = 'Nos produits' . $productType;
+                $data['title'] = 'Nos produits';
         
                 $this->load->view('templates/header', $data);
                 $this->load->view('pages/product', $data);
