@@ -20,14 +20,17 @@
 			<li class="nav-item">
 				<a class="nav-link text-white" href="#">Rhums arrangés</a>
 			</li>
+			<div class="d-block text-right">
 			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+				<a class="nav-link dropdown-toggle text-warning" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
 					aria-expanded="false">Connexion</a>
-				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">Client</a>
-					<a class="dropdown-item" href="#">Admin</a>
+				<div class="dropdown-menu bg-dark">
+					<a class="dropdown-item text-warning" href="#">Client</a>
+					<a class="dropdown-item text-warning" href="#">Admin</a>
 				</div>
 			</li>
+			</div>
+			
 		</ul>
 	</div>
 </nav>

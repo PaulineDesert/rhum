@@ -5,9 +5,9 @@
   <div class="card-body">
     <h5 class="card-title">Cave à Rhum</h5>
     <p class="card-text">Description de la société Cave à Rhum</p>
-	<a href="#" class="btn btn-primary">Mentions légales</a>
-    <a href="#" class="btn btn-primary">C G V</a>
-    <a href="#" class="btn btn-primary">Contact</a>
+	<a href="#" class="btn btn-warning">Mentions légales</a>
+    <a href="#" class="btn btn-warning">C G V</a>
+    <a href="#" class="btn btn-warning">Contact</a>
 
   </div>
   <div class="card-footer text-muted">
