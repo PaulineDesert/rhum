@@ -7,7 +7,7 @@
 			<div class="card-body">
 				<h5 class="card-title"><?= $products_item['product_name']; ?></h5>
 				<p class="card-text"><?= $products_item['product_description']; ?></p>
-				<a href="<?= site_url('product/'.$products_item['product_id']); ?>/" class="btn btn-primary">Ajouter au panier</a>
+				<a href="<?= site_url('product/'.$products_item['product_id']); ?>/" class="btn btn-primary">Voir</a>
 			</div>
 		</div>
 	</div>

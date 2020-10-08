@@ -9,16 +9,16 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="nav nav-pills nav-fill">
 			<li class="nav-item">
-				<a class="nav-link text-warning" href="<?php echo site_url('product'); ?>">Rhums blancs</a>
+				<a class="nav-link text-warning" href="<?php echo site_url('product'); ?>/blanc">Rhums blancs</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-white" href="<?php echo site_url('product'); ?>">Rhums ambrés</a>
+				<a class="nav-link text-white" href="<?php echo site_url('product'); ?>/ambres">Rhums ambrés</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-warning" href="<?php echo site_url('product'); ?>">Rhums vieux</a>
+				<a class="nav-link text-warning" href="<?php echo site_url('product'); ?>/vieux">Rhums vieux</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-white" href="<?php echo site_url('product'); ?>">Rhums arrangés</a>
+				<a class="nav-link text-white" href="<?php echo site_url('product'); ?>/arranges">Rhums arrangés</a>
 			</li>
 			
 			<li class="nav-item dropdown">
