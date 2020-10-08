@@ -10,17 +10,17 @@ class Product extends CI_Controller {
 
         public function index()
         {
-            $data['products'] = $this->Product_model->get_products();
+            $data['products'] = $this->product_model->get_products();
             $data['title'] = 'Produits';
 
             $this->load->view('templates/header', $data);
+            $this->load->view('templates/nav', $data);
             $this->load->view('product/index', $data);
             $this->load->view('templates/footer');
         }
-
-        public function view($id = NULL)
+        public function view()
         {
-            $data['products_item'] = $this->product_model->get_products($id);
+            $data['products_item'] = $this->product_model->get_products();
 
             if (empty($data['products_item']))
             {
@@ -30,6 +30,7 @@ class Product extends CI_Controller {
             $data['title'] = $data['products_item']['product_name'];
     
             $this->load->view('templates/header', $data);
+            $this->load->view('templates/nav', $data);
             $this->load->view('product/view', $data);
             $this->load->view('templates/footer');
         }

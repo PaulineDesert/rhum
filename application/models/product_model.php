@@ -6,15 +6,9 @@ class Product_model extends CI_Model {
                 $this->load->database();
         }
 
-        public function get_products($id = FALSE)
+        public function get_products()
         {
-                if ($id === FALSE)
-                {
-                        $query = $this->db->get('products');
-                        return $query->result_array();
-                }
-
-                $query = $this->db->get_where('products', array('product_id' => $id));
+                $query = $this->db->get('products');
                 return $query->row_array();
         }
 

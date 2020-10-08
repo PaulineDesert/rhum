@@ -59,7 +59,6 @@ $route['admin/(:any)'] = 'admin/view/$1';
 $route['admin'] = 'admin';
 
 // Route produit
-$route['product/create'] = 'product/create';
 $route['product/(:any)'] = 'product/view/$1';
 $route['product'] = 'product';
 
