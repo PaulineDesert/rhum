@@ -29,6 +29,7 @@ class Pages extends CI_Controller {
         {
 
             $data['title'] = 'Connexion';
+            $this->load->model('connexion_model');
 
             $this->form_validation->set_rules('login', 'Login', 'required');
             $this->form_validation->set_rules('password', 'Mot de passe', 'required');
