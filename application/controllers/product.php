@@ -10,17 +10,18 @@ class Product extends CI_Controller {
 
         public function index()
         {
-            $data['products'] = $this->product_model->get_products();
-            $data['title'] = 'Produits';
+            $data['product'] = $this->product_model->get_products();
+            $data['title'] = 'Tout nos rhums';
 
             $this->load->view('templates/header', $data);
             $this->load->view('templates/nav', $data);
             $this->load->view('product/index', $data);
             $this->load->view('templates/footer');
         }
-        public function view()
+        public function view($id)
         {
-            $data['products_item'] = $this->product_model->get_products();
+            $data['products_item'] = $this->product_model->get_products_by_type($id);
+            $data['title'] = 'Nos rhums';
 
             if (empty($data['products_item']))
             {
