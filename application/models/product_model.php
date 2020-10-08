@@ -12,18 +12,13 @@ class Product_model extends CI_Model {
                 return $query->result_array();
         }
 
-        public function get_products_by_id($id)
+        public function get_products_by_type($id)
         {
-<<<<<<< HEAD
-                $query = $this->db->get_where('products', array('product_id' => $id));
-                return $query->row_array();
-        }
-}
-=======
-                
-                $query = $this->db->get_where('products', array('product_id' => $id));
+                $this->db->select('*');
+                $this->db->join('types', 'products.type_id = types.type_id');
+                // $query = $this->get();
+                $query = $this->db->get_where('products', array('products.type_id' => $id));
                 return $query->row_array();
         }
 
 }
->>>>>>> 131de9f8d183c0cdea666723971772f7540aa933

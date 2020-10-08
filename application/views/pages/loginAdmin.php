@@ -8,7 +8,6 @@
 </header>
 	<div class="row mt-5">
 		<div class="col-sm-4 mx-auto">
-			<form>
 				<div class="form-group">
 					<label for="login">Pseudo</label>
 					<input type="text" class="form-control" name="login" id="login">
@@ -18,17 +17,16 @@
 					<input type="password" class="form-control" id="password" name="password">
 				</div>
 				<?php
-                if($this->session->flashdata('message'))
+                if($this->session->flashdata('message') && $this->input->post('submit'))
                 {
                     echo '
                     <div class="alert alert-success">
                         '.$this->session->flashdata("message").'
                     </div>
                     ';
-                }
+				}
                 ?>
-				<button type="submit" class="btn btn-dark d-block mx-auto mb-5">Me connecter</button>
-			</form>
+				<input type="submit" name="submit" value="Me connecter" class="btn btn-dark d-block mx-auto mb-5">
 		</div>
 
 	</div>

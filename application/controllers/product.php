@@ -28,7 +28,7 @@ class Product extends CI_Controller {
                     show_404();
             }
     
-            $data['title'] = $data['products_item']['product_name'];
+            $data['title'] = $data['products_item']['type_name'];
     
             $this->load->view('templates/header', $data);
             $this->load->view('templates/nav', $data);
