@@ -8,7 +8,7 @@
          
                 <div class="form-group">
                     <label for="login">Login</label>
-                    <input type="text" class="form-control" id="login" name="login" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" id="login" name="login">
                 </div>
                 <div class="form-group">
                     <label for="password">Mot de passe</label>
