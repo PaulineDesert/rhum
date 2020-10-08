@@ -29,33 +29,45 @@ class Pages extends CI_Controller {
         {
             $this->load->helper('form');
             $this->load->library('form_validation');
+            $this->load->library('encrypt');
 
             $data['title'] = 'Connexion';
 
             $this->form_validation->set_rules('login', 'Login', 'required');
             $this->form_validation->set_rules('password', 'Mot de passe', 'required');
 
-            if ($this->form_validation->run() === FALSE)
+            if ($this->form_validation->run())
+            {
+                    $result = $this->connexion_model->checkLogin($this->input->post('login'), $this->input->post('password'));
+                    if ($result == '')
+                    {
+                        redirect('admin');
+                    }
+                    else
+                    {
+                        $this->load->view('templates/header', $data);
+                        $this->load->view('templates/nav', $data);
+                        $this->load->view('pages/connexionForm');  
+                    }
+
+                // $data = array(
+                //         'login' => $this->input->post('login'),
+                //         'password' => $this->input->post('password')
+                //     );
+                // if ($this->connexion_model->checkLogin($data['login'], $data['password'])) {
+                //    $this->load->view('admin');
+                // } else {
+                //         $this->load->view('templates/header', $data);
+                //         $this->load->view('templates/nav', $data);
+                //         $this->load->view('pages/connexionForm');   
+                // }
+                // $this->load->view('admin');
+            }
+            else
             {
                 $this->load->view('templates/header', $data);
                 $this->load->view('templates/nav', $data);
                 $this->load->view('pages/connexionForm');
-
-            }
-            else
-            {
-                $data = array(
-                        'login' => $this->input->post('login'),
-                        'password' => $this->input->post('password')
-                    );
-                if ($this->connexion_model->checkLogin($data['login'], $data['password'])) {
-                   $this->load->view('admin');
-                } else {
-                        $this->load->view('templates/header', $data);
-                        $this->load->view('templates/nav', $data);
-                        $this->load->view('pages/connexionForm');   
-                }
-                // $this->load->view('admin');
             }
         }
 }
