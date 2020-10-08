@@ -57,13 +57,13 @@ class Admin extends CI_Controller {
             {
                 $this->load->view('templates/header', $data);
                 $this->load->view('templates/nav', $data);
-                $this->load->view('customer/create');
+                $this->load->view('admin/create');
                 $this->load->view('templates/footer');
 
                    }
                    else
                    {
-                       $this->customer_model->set_products();
+                       $this->admin_model->set_products();
                        $this->load->view('admin/success');
                    }
         }

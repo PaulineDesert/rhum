@@ -14,7 +14,7 @@ class Customer_model extends CI_Model {
             $data = array(
                 'register_name' => $this->input->post('name'),
                 'register_email' => $this->input->post('email'),
-                'register_password' => $this->input->post('password'),
+                'register_password' => password_hash($this->input->post('password'),PASSWORD_DEFAULT),
             );
 
             return $this->db->insert('register', $data);
