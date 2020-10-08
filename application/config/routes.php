@@ -58,11 +58,11 @@ $route['admin/create'] = 'admin/create';
 $route['admin/(:any)'] = 'admin/view/$1';
 $route['admin'] = 'admin';
 
+
 // Route par défaut
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';
 
-//Route pour register
-$route['register'] = 'register';
+
 
 
