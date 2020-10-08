@@ -18,18 +18,20 @@ class Admin_model extends CI_Model {
                 return $query->row_array();
         }
 
-        // public function set_products()
-        // {
-        //     $this->load->helper('url');
+        public function set_products()
+        {
+            $this->load->helper('url');
 
-        //     $slug = url_title($this->input->post('title'), 'dash', TRUE);
 
-        //     $data = array(
-        //         'title' => $this->input->post('title'),
-        //         'slug' => $slug,
-        //         'text' => $this->input->post('text')
-        //     );
+            $data = array(
+                'product_name' => $this->input->post('name'),
+                'product_description' => $this->input->post('description'),
+                'product_image' => $this->input->post('image'),
+                'product_price' => $this->input->post('price'),
+                'product_qty' => $this->input->post('quantity'),
+                'type_id' => $this->input->post('type'),
+            );
 
-        //     return $this->db->insert('news', $data);
-        // }
+            return $this->db->insert('products', $data);
+        }
 }

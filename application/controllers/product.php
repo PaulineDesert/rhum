@@ -20,7 +20,7 @@ class Product extends CI_Controller {
         }
         public function view($id)
         {
-            $data['products_item'] = $this->product_model->get_products_by_type($id);
+            $data['products_item'] = $this->product_model->get_products_by_id($id);
             $data['title'] = 'Nos rhums';
 
             if (empty($data['products_item']))
@@ -28,7 +28,7 @@ class Product extends CI_Controller {
                     show_404();
             }
     
-            $data['title'] = $data['products_item']['product_name'];
+            $data['title'] = $data['products_item']['type_name'];
     
             $this->load->view('templates/header', $data);
             $this->load->view('templates/nav', $data);

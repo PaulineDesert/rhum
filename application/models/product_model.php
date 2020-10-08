@@ -14,8 +14,10 @@ class Product_model extends CI_Model {
 
         public function get_products_by_type($id)
         {
-                
-                $query = $this->db->get_where('products', array('product_id' => $id));
+                $this->db->select('*');
+                $this->db->join('types', 'products.type_id = types.type_id');
+                // $query = $this->get();
+                $query = $this->db->get_where('products', array('products.type_id' => $id));
                 return $query->row_array();
         }
 
