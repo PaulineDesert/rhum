@@ -25,7 +25,7 @@ class Product extends CI_Controller {
 
             if (empty($data['products_item']))
             {
-                    show_404();
+                    echo 'Aucun produit n\'existe';
             }
     
             $data['title'] = $data['products_item']['type_name'];
