@@ -10,6 +10,11 @@ class Admin extends CI_Controller {
 
         public function index()
         {
+
+                if (!isset($_SESSION) || !isset($_SESSION['admin'])) {
+                        redirect('pages/connexionForm');
+                }
+        
             $data['products'] = $this->admin_model->get_products();
             $data['title'] = 'Produits';
 
