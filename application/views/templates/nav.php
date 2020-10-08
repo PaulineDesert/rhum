@@ -25,8 +25,8 @@
 				<a class="nav-link dropdown-toggle text-warning" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
 					aria-expanded="false">Connexion</a>
 				<div class="dropdown-menu bg-dark">
-					<a class="dropdown-item text-warning" href="<?php echo site_url('logOrRegistForm'); ?>">Client</a>
-					<a class="dropdown-item text-warning" href="<?php echo site_url('loginAdmin'); ?>">Admin</a>
+					<a class="dropdown-item text-warning" href="<?php echo site_url('register'); ?>">Client</a>
+					<a class="dropdown-item text-warning" href="<?php echo site_url('pages/loginAdmin'); ?>">Admin</a>
 				
 			</li>
 			<li>
