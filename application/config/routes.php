@@ -62,5 +62,7 @@ $route['admin'] = 'admin';
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';
 
-// Route login
-$route['pages/logOrRegistForm'] = 'pages/logOrRegistForm';
+//Route pour register
+$route['register'] = 'register';
+
+

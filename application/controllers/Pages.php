@@ -5,8 +5,8 @@ class Pages extends CI_Controller {
         public function __construct()
         {
                 parent::__construct();
-                $this->load->helper('url_helper');
-                $this->load->library('session');
+				$this->load->helper('url_helper');
+				$this->load->library('form_validation');
         }
 
     public function view($page = 'home')
@@ -19,18 +19,14 @@ class Pages extends CI_Controller {
     
             $data['title'] = ucfirst($page); // Capitalize the first letter
     
-	    $this->load->view('templates/header', $data);
-	    $this->load->view('templates/nav', $data);
+	    	$this->load->view('templates/header', $data);
+	    	$this->load->view('templates/nav', $data);
             $this->load->view('pages/'.$page, $data);
             $this->load->view('templates/footer', $data);
     }
 
     public function loginAdmin()
         {
-            $this->load->helper('form');
-            $this->load->library('form_validation');
-            $this->load->library('encrypt');
-            $this->load->model('connexion_model');
 
             $data['title'] = 'Connexion';
 
@@ -61,5 +57,7 @@ class Pages extends CI_Controller {
                 $this->load->view('pages/loginAdmin');
                 $this->load->view('templates/footer', $data);
             }
-        }
+		}
+		
+		
 }
