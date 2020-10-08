@@ -6,10 +6,16 @@ class Admin extends CI_Controller {
                 parent::__construct();
                 $this->load->model('admin_model');
                 $this->load->helper('url_helper');
+                $this->load->library('session');
         }
 
         public function index()
         {
+
+                if (!isset($_SESSION) || !isset($_SESSION['admin'])) {
+                        redirect('pages/connexionForm');
+                }
+        
             $data['products'] = $this->admin_model->get_products();
             $data['title'] = 'Produits';
 

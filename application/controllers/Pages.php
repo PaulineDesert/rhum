@@ -6,6 +6,7 @@ class Pages extends CI_Controller {
         {
                 parent::__construct();
                 $this->load->helper('url_helper');
+                $this->load->library('session');
         }
 
     public function view($page = 'home')
@@ -24,11 +25,12 @@ class Pages extends CI_Controller {
             $this->load->view('templates/footer', $data);
     }
 
-    public function connexionForm()
+    public function loginAdmin()
         {
             $this->load->helper('form');
             $this->load->library('form_validation');
             $this->load->library('encrypt');
+            $this->load->model('connexion_model');
 
             $data['title'] = 'Connexion';
 
@@ -44,29 +46,20 @@ class Pages extends CI_Controller {
                     }
                     else
                     {
+                        $this->session->set_flashdata('message',$result);
                         $this->load->view('templates/header', $data);
                         $this->load->view('templates/nav', $data);
-                        $this->load->view('pages/connexionForm');  
+                        $this->load->view('pages/loginAdmin');  
+                        $this->load->view('templates/footer', $data);
                     }
-
-                // $data = array(
-                //         'login' => $this->input->post('login'),
-                //         'password' => $this->input->post('password')
-                //     );
-                // if ($this->connexion_model->checkLogin($data['login'], $data['password'])) {
-                //    $this->load->view('admin');
-                // } else {
-                //         $this->load->view('templates/header', $data);
-                //         $this->load->view('templates/nav', $data);
-                //         $this->load->view('pages/connexionForm');   
-                // }
-                // $this->load->view('admin');
             }
             else
             {
+                $this->session->set_flashdata('message','Veuillez renseigner les champs pseudo et mot de passe');
                 $this->load->view('templates/header', $data);
                 $this->load->view('templates/nav', $data);
-                $this->load->view('pages/connexionForm');
+                $this->load->view('pages/loginAdmin');
+                $this->load->view('templates/footer', $data);
             }
         }
 }
