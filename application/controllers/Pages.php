@@ -7,7 +7,6 @@ class Pages extends CI_Controller {
                 parent::__construct();
 				$this->load->helper('url_helper');
 				$this->load->library('form_validation');
-				$this->load->model('register_model');
         }
 
     public function view($page = 'home')
@@ -20,8 +19,8 @@ class Pages extends CI_Controller {
     
             $data['title'] = ucfirst($page); // Capitalize the first letter
     
-	    $this->load->view('templates/header', $data);
-	    $this->load->view('templates/nav', $data);
+	    	$this->load->view('templates/header', $data);
+	    	$this->load->view('templates/nav', $data);
             $this->load->view('pages/'.$page, $data);
             $this->load->view('templates/footer', $data);
     }
@@ -69,40 +68,5 @@ class Pages extends CI_Controller {
             }
 		}
 		
-	
-	
-		function validation()
-		{
-            $data['title'] = 'Connexion';
-
-			$this->form_validation->set_rules('user_name', 'Name', 'required|trim');
-			$this->form_validation->set_rules('user_email', 'EmailAddress', 'required|trim|valid_email|is_unique[codeigniter_register.email]');
-			$this->form_validation->set_rules('user_password', 'Password', 'required');
-			if($this->form_validation->run())
-			{
-				$verification_key = md5(rand());
-				$encrypted_password = $this->encrypt->encode($this->input->post('user_password'));
-				$data = array(
-					'name'      => $this->input->post('user_name'),
-					'email'     => $this->input->post('user_email'),
-					'password'  => $encrypted_password,
-					'verification_key' => $verification_key
-				);
-				$id = $this->register_model->insert($data);
-				if($id > 0)
-				{
-	
-				}
-			}
-			else
-			{
-				$this->load->view('templates/header', $data);
-                $this->load->view('templates/nav', $data);
-				$this->load->view('pages/register');
-                $this->load->view('templates/footer', $data);
-
-				
-			}
-	
-		}
+		
 }
