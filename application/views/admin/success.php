@@ -4,9 +4,9 @@
 </head>
 <body>
 
-<h3>Your form was successfully submitted!</h3>
+<h3>Votre produit à bien ajouté.</h3>
 
-<p><?php echo anchor('form', 'Try it again!'); ?></p>
+<p><?php echo anchor('form', 'Ajouter un autre produit'); ?></p>
 
 </body>
 </html>
