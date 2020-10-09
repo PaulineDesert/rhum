@@ -41,8 +41,8 @@ class Register extends CI_Controller
 				$config['smtp_host']    = 'ssl://smtp.gmail.com';
 				$config['smtp_port']    = '465';
 				$config['smtp_timeout'] = '7';
-				$config['smtp_user']    = 'jerompestel@gmail.com';
-				$config['smtp_pass']    = 'Jeje11011914!';
+				$config['smtp_user']    = 'smtptestcode@gmail.com';
+				$config['smtp_pass']    = 'SaladeVerte';
 				$config['charset']    = 'utf-8';
 				$config['newline']    = "\r\n";
 				$config['mailtype'] = 'html'; // or text
@@ -50,7 +50,7 @@ class Register extends CI_Controller
 
 				$this->email->initialize($config);
 
-				$this->email->from('jerompestel@gmail.com', 'Cave-à-rhum');
+				$this->email->from('smtptestcode@gmail.com', 'Cave-à-rhum');
 
 				$this->email->send();
 
@@ -63,7 +63,7 @@ class Register extends CI_Controller
 				
 				$this->email->set_newline("\r\n");
 				// Set email informations and content
-				$this->email->from('jerompestel@gmail.com');
+				$this->email->from('smtptestcode@gmail.com');
 				$this->email->to($this->input->post('user_email'));
 				$this->email->subject($subject);
 				$this->email->message($message);
