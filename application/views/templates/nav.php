@@ -21,15 +21,25 @@
 				<a class="nav-link text-white" href="<?php echo site_url('product/4'); ?>">Rhums arrangés</a>
 			</li>
 			
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle text-warning" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-					aria-expanded="false">Connexion</a>
-				<div class="dropdown-menu bg-dark">
-					<a class="dropdown-item text-warning" href="<?php echo site_url('customer/create'); ?>">Client</a>
-					<a class="dropdown-item text-warning" href="<?php echo site_url('pages/loginAdmin'); ?>">Admin</a>
-				</div>
-			</li>
-			<li>
+			<?php if (isset($_SESSION['admin'])) { ?>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle text-warning" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+							aria-expanded="false"><?= ucfirst($_SESSION['admin']['0']['admin_pseudo']) ?></a>
+						<div class="dropdown-menu bg-dark">
+							<a class="dropdown-item text-warning" href="<?php echo site_url('admin'); ?>">Accès admin</a>
+								<a class="dropdown-item text-danger" href="<?php echo site_url('admin/deconnexion'); ?>">Déconnexion</a>
+						</div>
+					</li>
+				<?php } else { ?>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle text-warning" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+							aria-expanded="false">Connexion</a>
+						<div class="dropdown-menu bg-dark">
+							<a class="dropdown-item text-warning" href="<?php echo site_url('customer/create'); ?>">Client</a>
+								<a class="dropdown-item text-warning" href="<?php echo site_url('pages/loginAdmin'); ?>">Admin</a>
+						</div>
+					</li>
+				<?php } ?>
 			
 			
 			

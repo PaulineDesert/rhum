@@ -91,7 +91,7 @@ class Admin extends CI_Controller {
                         $this->load->helper('form');
                         $this->load->library('form_validation');
 
-                        $data['title'] = 'Modifier un produit:';
+                        $data['title'] = 'Modifier un produit';
                         $id = $this->input->post('updateProduct');
 
                         $this->form_validation->set_rules('name', 'Name', 'required');
