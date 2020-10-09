@@ -15,8 +15,8 @@ class Admin extends CI_Controller {
                         redirect('pages/loginAdmin');
                 }
         
-            $data['products'] = $this->admin_model->list_products();
-            $data['title'] = 'Produits';
+            $data['products'] = $this->admin_model->get_products();
+            $data['title'] = 'Liste de tout les rhums';
 
             $this->load->view('templates/header', $data);
             $this->load->view('templates/navAdmin', $data);
@@ -46,7 +46,7 @@ class Admin extends CI_Controller {
             $this->load->helper('form');
             $this->load->library('form_validation');
 
-            $data['title'] = 'Entrer un nouveau produit:';
+            $data['title'] = 'Ajouter un produit';
 
             $this->form_validation->set_rules('name', 'Name', 'required');
             $this->form_validation->set_rules('description', 'Description', 'required');
@@ -105,9 +105,15 @@ class Admin extends CI_Controller {
                    }
         }
 
-        public function list()
+        public function delete($id)
         {
                 $data['title'] = 'Entrer un nouveau produit:';
-
+             
+                $this->admin_model->delete_products($id);
+                $this->load->view('templates/header', $data);
+                $this->load->view('templates/navAdmin', $data);
+                $this->load->view('admin/delete');
+                $this->load->view('templates/footer');
         }
+
 }

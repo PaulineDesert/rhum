@@ -56,11 +56,18 @@ class Admin_model extends CI_Model {
 
         }
 
+        public function delete_products($id)
+        {                
+                $query = $this->db->where('product_id', $id);
+                $query = $this->db->delete('products');
+        }
+
         public function list_products()
         {
                 $query = $this->db->get('products');
                 return $query->result_array();
         }
+
         public function list_types_products()
         {
                 $query = $this->db->get('types');

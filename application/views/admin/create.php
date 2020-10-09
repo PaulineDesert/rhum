@@ -1,11 +1,11 @@
-<h2><?php echo $title; ?></h2>
-
 <?php echo validation_errors(); ?>
 
 <?php echo form_open('admin/create'); ?>
 <div class="row"></div>
     <div class="col-4"></div>
-    <div class="col-4">
+    <div class="col-4 align-center mx-auto">
+    <form class="align-center">
+    <h1 class="align-center text-danger"><?= $title; ?></h1>
         <label for="name">Nom:</label>
         <input type="text" name="name" /><br />
 
@@ -26,8 +26,8 @@
         <input type="number" name="type" /><br />
 
 
-        <input type="submit" name="submit" value="Ajouter ce produit" />
-        
+        <input type="submit" class="btn btn-warning " name="submit" value="Ajouter ce produit" />
+    </form>
         </div>
     <div class="col-4"></div>
 </div>
