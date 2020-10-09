@@ -11,9 +11,9 @@ class Admin extends CI_Controller {
         public function index()
         {
 
-                // if (!isset($_SESSION) || !isset($_SESSION['admin'])) {
-                //         redirect('pages/connexionForm');
-                // }
+                if (!isset($_SESSION) || !isset($_SESSION['admin'])) {
+                        redirect('pages/loginAdmin');
+                }
         
             $data['products'] = $this->admin_model->list_products();
             $data['title'] = 'Produits';
@@ -58,7 +58,7 @@ class Admin extends CI_Controller {
             if ($this->form_validation->run() === FALSE)
             {
                 $this->load->view('templates/header', $data);
-                $this->load->view('templates/nav', $data);
+                $this->load->view('templates/navAdmin', $data);
                 $this->load->view('admin/create');
                 $this->load->view('templates/footer');
 

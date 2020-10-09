@@ -27,7 +27,7 @@
 				<div class="dropdown-menu bg-dark">
 					<a class="dropdown-item text-warning" href="<?php echo site_url('customer/create'); ?>">Client</a>
 					<a class="dropdown-item text-warning" href="<?php echo site_url('pages/loginAdmin'); ?>">Admin</a>
-				
+				</div>
 			</li>
 			<li>
 			

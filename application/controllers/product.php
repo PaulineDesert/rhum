@@ -20,15 +20,13 @@ class Product extends CI_Controller {
         }
         public function view($id)
         {
-            $data['products_item'] = $this->product_model->get_products_by_type($id);
+            $data['product'] = $this->product_model->get_products_by_type($id);
             $data['title'] = 'Nos rhums';
 
-            if (empty($data['products_item']))
+            if (empty($data['product']))
             {
                     echo 'Aucun produit n\'existe';
             }
-    
-            $data['title'] = $data['products_item']['type_name'];
     
             $this->load->view('templates/header', $data);
             $this->load->view('templates/nav', $data);
