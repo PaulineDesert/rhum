@@ -60,16 +60,10 @@ $route['admin/deconnexion'] = 'admin/deconnexion';
 $route['admin/(:any)'] = 'admin/view/$1';
 $route['admin'] = 'admin';
 
-// Route customer
-$route['customer/create'] = 'customer/create';
-$route['customer/(:any)'] = 'customer/view/$1';
-$route['customer'] = 'customer';
 
 // Route par défaut
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';
 
-// //Route pour register
-// $route['register'] = 'register';
 
 
