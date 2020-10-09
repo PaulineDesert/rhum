@@ -28,4 +28,28 @@ class Register_model extends CI_Model
 			return false;
 		}
 	}
+	// Verification customer account
+	public function checkCustomer($email, $password)
+        {
+            
+            $this->db->where("register_email", $email);
+            $query = $this->db->get('register');
+
+            if ($query->num_rows() == 1)
+            {
+                foreach($query->result() as $row)
+                {
+                    if ($email === $decryptKey = $this->encryption->decrypt($row->register_password))
+                    {
+                        $this->session->set_userdata('admin', $query->result_array());
+                    }
+                    else {
+                        return 'Mauvais login ou mot de passe';
+                    }
+                }
+            }
+            else {
+                return 'Mauvais login ou mot de passe';
+            }
+        }
 }

@@ -16,6 +16,7 @@ class Register extends CI_Controller
 		$this->load->view('register');
 	}
 
+	// Registration method with email send
 	function validation($page = 'register')
 	{
 		$this->form_validation->set_rules('user_name', 'Nom', 'required|trim');
@@ -59,9 +60,10 @@ class Register extends CI_Controller
 				<p>Bonjour ".$this->input->post('user_name')."</p>
 				<p>Ceci est un email de vérification. Veuillez cliquer sur le lien suivant pour vérifier votre adresse email :<a href=".base_url().'register/verify_email/'.$verification_key.">Vérifier</a>.</p>";
 				
+
 				// Load email library
-				
 				$this->email->set_newline("\r\n");
+
 				// Set email informations and content
 				$this->email->from('smtptestcode@gmail.com');
 				$this->email->to($this->input->post('user_email'));
@@ -100,7 +102,7 @@ class Register extends CI_Controller
 		}
 
 	}
-
+	// Verify if email exist before registration
 	function verify_email($page = 'email_verification')
 	{
 		if($this->uri->segment(3))
@@ -132,4 +134,16 @@ class Register extends CI_Controller
 			
 		}
 	}
+
+	// Verify if email exist before registration
+	function loginCustomer($page = 'register')
+	{
+		
+		$this->form_validation->set_rules('customer_email', 'Email', 'required|trim|valid_email');
+		$this->form_validation->set_rules('customer_password', 'Mot de passe', 'required');
+			
+		
+	}
+
+	
 }

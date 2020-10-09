@@ -15,12 +15,12 @@
 								
 								<div class="form-group">
 									<label>Entrez votre email</label>
-									<input type="text" name="user_email" class="form-control" value="<?php echo set_value('user_email'); ?>" />
+									<input type="text" name="customer_email" class="form-control" value="<?php echo set_value('user_email'); ?>" />
 									<!--<span class="text-danger"><?php echo form_error('user_email'); ?></span>-->
 								</div>
 								<div class="form-group">
 									<label>Entrez votre mot de passe</label>
-									<input type="password" name="user_password" class="form-control" value="<?php echo set_value('user_password'); ?>" />
+									<input type="password" name="customer_password" class="form-control" value="<?php echo set_value('user_password'); ?>" />
 									<!--<span class="text-danger"><?php echo form_error('user_password'); ?></span>-->
 								</div>
 								<div class="form-group">
