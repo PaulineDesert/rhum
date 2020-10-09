@@ -4,9 +4,10 @@
 <h2 class="text-center"><?= $title; ?></h2>
 <div class="container p-2 mt-3">
 <div class="row">
-	<div class=" d-block mx-auto col-sm-4">
-        <div class="card">
-            <img src="../../assets/imgs/<?= $products_item['product_image']; ?>" class="card-img-top preview<?= $products_item['product_id']; ?>" alt="...">
+<?php foreach ($products as $products_item): ?>
+	<div class="col-4">
+        <div class="card" style="width: 18rem;">
+            <img src="../assets/imgs/<?= $products_item['product_image']; ?>" class="card-img-top preview<?= $products_item['product_id']; ?>" alt="...">
             <input type="file" name="image" data-preview=".preview<?= $products_item['product_id']; ?>" /><br />
             <input type="hidden" name="productImage" value="<?= $products_item['product_image']; ?>" /><br />
 			<div class="card-body">
@@ -46,5 +47,37 @@
 			</div>
 		</div>
     </div>
+    <?php endforeach; ?>
 </div>
 </div>
+<!-- 
+<div class="row"></div>
+    <div class="col-4"></div>
+    <div class="col-4">
+        <label for="name">Nom:</label>
+        <input type="text" name="name" /><br />
+
+        <label for="description">Description:</label>
+        <textarea name="description"></textarea><br />
+
+        
+        <label for="image">Image:</label>
+        <input type="file" name="image" /><br />
+        
+        <label for="price">Prix:</label>
+        <input type="number" name="price" /><br />
+        
+        <label for="quantity">Quantité:</label>
+        <input type="number" name="quantity" /><br />
+        
+        <label for="type">Type:</label>
+        <input type="number" name="type" /><br />
+
+
+        <input type="submit" name="submit" value="Ajouter ce produit" />
+        
+        </div>
+    <div class="col-4"></div>
+</div>
+
+</form> -->

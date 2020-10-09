@@ -55,6 +55,8 @@ $route['product'] = 'product';
 
 // Route administrateur
 $route['admin/create'] = 'admin/create';
+$route['admin/update'] = 'admin/update';
+$route['admin/deconnexion'] = 'admin/deconnexion';
 $route['admin/(:any)'] = 'admin/view/$1';
 $route['admin'] = 'admin';
 
@@ -62,7 +64,6 @@ $route['admin'] = 'admin';
 // Route par défaut
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';
-
 
 
 
