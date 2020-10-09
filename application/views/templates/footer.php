@@ -136,7 +136,7 @@ Integer vestibulum ultricies lacinia. Quisque eget arcu molestie, ullamcorper li
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 		<!-- Javascript -->
 <script type="text/javascript" src="assets/js/main.js"></script>
-
+<script src="../assets/js/uploadPreview.js"></script>
 		<!-- COOKIES -->
 <script type="text/javascript" src="assets/imports/cookies/tarteaucitron.js-1.3/tarteaucitron.js"></script>
 		

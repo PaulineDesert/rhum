@@ -35,9 +35,35 @@ class Admin_model extends CI_Model {
             return $this->db->insert('products', $data);
         }
 
+        public function update_products($id)
+        {
+  
+            $this->load->helper('url');
+
+            $data = array(
+                'product_name' => $this->input->post('name'),
+                'product_description' => $this->input->post('description'),
+                'product_image' => empty($this->input->post('image')) ? $this->input->post('productImage') : $this->input->post('image'),
+                'product_price' => $this->input->post('price'),
+                'product_qty' => $this->input->post('quantity'),
+                'type_id' => $this->input->post('type'),
+            );
+
+            var_dump($data);
+            $query = $this->db->where('product_id', $id);
+            $query = $this->db->update('products', $data);
+            return $query;
+
+        }
+
         public function list_products()
         {
                 $query = $this->db->get('products');
+                return $query->result_array();
+        }
+        public function list_types_products()
+        {
+                $query = $this->db->get('types');
                 return $query->result_array();
         }
 }
