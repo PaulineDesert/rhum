@@ -1,0 +1,1 @@
+<h1 class="align-center"> Félicitation, le produit à bien été supprimés</h1>
