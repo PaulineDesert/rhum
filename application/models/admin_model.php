@@ -34,4 +34,10 @@ class Admin_model extends CI_Model {
 
             return $this->db->insert('products', $data);
         }
+
+        public function list_products()
+        {
+                $query = $this->db->get('products');
+                return $query->result_array();
+        }
 }

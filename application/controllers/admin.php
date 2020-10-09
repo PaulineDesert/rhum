@@ -11,14 +11,15 @@ class Admin extends CI_Controller {
         public function index()
         {
 
-                if (!isset($_SESSION) || !isset($_SESSION['admin'])) {
-                        redirect('pages/connexionForm');
-                }
+                // if (!isset($_SESSION) || !isset($_SESSION['admin'])) {
+                //         redirect('pages/connexionForm');
+                // }
         
-            $data['products'] = $this->admin_model->get_products();
+            $data['products'] = $this->admin_model->list_products();
             $data['title'] = 'Produits';
 
             $this->load->view('templates/header', $data);
+            $this->load->view('templates/navAdmin', $data);
             $this->load->view('admin/index', $data);
             $this->load->view('templates/footer');
         }
@@ -35,6 +36,7 @@ class Admin extends CI_Controller {
             $data['title'] = $data['products_item']['product_name'];
     
             $this->load->view('templates/header', $data);
+            $this->load->view('templates/navAdmin', $data);
             $this->load->view('admin/view', $data);
             $this->load->view('templates/footer');
         }
@@ -66,5 +68,11 @@ class Admin extends CI_Controller {
                        $this->admin_model->set_products();
                        $this->load->view('admin/success');
                    }
+        }
+
+        public function list()
+        {
+                $data['title'] = 'Entrer un nouveau produit:';
+
         }
 }
