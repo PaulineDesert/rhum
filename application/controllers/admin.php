@@ -70,43 +70,61 @@ class Admin extends CI_Controller {
                    }
         }
 
-        public function update()
+        public function update($id = NULL)
         {
-                $data['products'] = $this->admin_model->list_products();
-                $data['products_types'] = $this->admin_model->list_types_products();
-            $this->load->helper('form');
-            $this->load->library('form_validation');
+                if (isset($id)) {
 
-            $data['title'] = 'Modifier un produit:';
-            $id = $this->input->post('updateProduct');
+                        $data['products_item'] = $this->admin_model->get_products($id);
+                        $data['products_types'] = $this->admin_model->list_types_products();
 
-            $this->form_validation->set_rules('name', 'Name', 'required');
-            $this->form_validation->set_rules('description', 'Description', 'required');
-            $this->form_validation->set_rules('price', 'Price', 'required');
-            $this->form_validation->set_rules('quantity', 'Quantity', 'required');
-            $this->form_validation->set_rules('type', 'Type', 'required');
+                        $data['title'] = 'Modifier '. $data['products_item']['product_name'];
 
-            if ($this->form_validation->run() === FALSE)
-            {
-                $this->load->view('templates/header', $data);
-                $this->load->view('templates/navAdmin', $data);
-                $this->load->view('admin/update');
-                $this->load->view('templates/footer');
+                        $this->load->view('templates/header', $data);
+                        $this->load->view('templates/navAdmin', $data);
+                        $this->load->view('admin/view', $data);
+                        $this->load->view('templates/footer');
 
-                   }
-                   else
-                   {
-                        if ($this->admin_model->update_products($id))
+                } else {
+
+                        $data['products'] = $this->admin_model->list_products();
+                        $data['products_types'] = $this->admin_model->list_types_products();
+                        $this->load->helper('form');
+                        $this->load->library('form_validation');
+
+                        $data['title'] = 'Modifier un produit:';
+                        $id = $this->input->post('updateProduct');
+
+                        $this->form_validation->set_rules('name', 'Name', 'required');
+                        $this->form_validation->set_rules('description', 'Description', 'required');
+                        $this->form_validation->set_rules('price', 'Price', 'required');
+                        $this->form_validation->set_rules('quantity', 'Quantity', 'required');
+                        $this->form_validation->set_rules('type', 'Type', 'required');
+
+                        if ($this->form_validation->run() === FALSE)
                         {
-                                $data['success'] = 'Votre produit a bien été modifié';
                                 $this->load->view('templates/header', $data);
                                 $this->load->view('templates/navAdmin', $data);
-                                $this->load->view('admin/successU');
+                                $this->load->view('admin/update');
                                 $this->load->view('templates/footer');
-                        }
-                       
-                       
-                   }
+
+                                }
+                                else
+                                {
+                                        if ($this->admin_model->update_products($id))
+                                        {
+                                                $data['success'] = 'Votre produit a bien été modifié';
+                                                $this->load->view('templates/header', $data);
+                                                $this->load->view('templates/navAdmin', $data);
+                                                $this->load->view('admin/successU');
+                                                $this->load->view('templates/footer');
+                                        }
+                                
+                                
+                                }
+
+                }
+
+                
         }
 
         public function delete($id)
