@@ -98,7 +98,11 @@ class Admin extends CI_Controller {
                    {
                         if ($this->admin_model->update_products($id))
                         {
-                                // $this->load->view('admin/success');
+                                $data['success'] = 'Votre produit a bien été modifié';
+                                $this->load->view('templates/header', $data);
+                                $this->load->view('templates/navAdmin', $data);
+                                $this->load->view('admin/successU');
+                                $this->load->view('templates/footer');
                         }
                        
                        
@@ -113,6 +117,17 @@ class Admin extends CI_Controller {
                 $this->load->view('templates/header', $data);
                 $this->load->view('templates/navAdmin', $data);
                 $this->load->view('admin/delete');
+                $this->load->view('templates/footer');
+        }
+
+        public function deconnexion()
+        {
+                $data['title'] = 'Deconnexion';
+
+                $this->session->unset_userdata('admin');
+                $this->load->view('templates/header', $data);
+                $this->load->view('templates/navAdmin', $data);
+                $this->load->view('admin/deconnexion');
                 $this->load->view('templates/footer');
         }
 

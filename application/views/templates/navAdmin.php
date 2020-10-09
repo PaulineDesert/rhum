@@ -27,7 +27,7 @@
 			</li>
 			
 			<li class="nav-item">
-				<a class="nav-link text-danger" href="#" role="button" aria-haspopup="true"
+				<a class="nav-link text-danger" href="<?php echo site_url('admin/deconnexion'); ?>" role="button" aria-haspopup="true"
 					aria-expanded="false">Déconnexion</a>
 				
 			</li>

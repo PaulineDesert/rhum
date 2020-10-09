@@ -49,7 +49,6 @@ class Admin_model extends CI_Model {
                 'type_id' => $this->input->post('type'),
             );
 
-            var_dump($data);
             $query = $this->db->where('product_id', $id);
             $query = $this->db->update('products', $data);
             return $query;
