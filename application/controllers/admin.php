@@ -44,7 +44,7 @@ class Admin extends CI_Controller {
         public function create()
         {
             $this->load->helper('form');
-            $this->load->library('form_validation');
+        //     $this->load->library('form_validation');
 
             $data['title'] = 'Ajouter un produit';
 
@@ -72,6 +72,8 @@ class Admin extends CI_Controller {
 
         public function update($id = NULL)
         {
+        //     $this->load->library('form_validation');
+
                 if (isset($id)) {
 
                         $data['products_item'] = $this->admin_model->get_products($id);
