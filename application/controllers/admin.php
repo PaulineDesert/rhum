@@ -15,7 +15,7 @@ class Admin extends CI_Controller {
                         redirect('pages/loginAdmin');
                 }
         
-            $data['products'] = $this->admin_model->get_products();
+            $data['products'] = $this->admin_model->list_products();
             $data['title'] = 'Produits';
 
             $this->load->view('templates/header', $data);
@@ -68,5 +68,11 @@ class Admin extends CI_Controller {
                        $this->admin_model->set_products();
                        $this->load->view('admin/success');
                    }
+        }
+
+        public function list()
+        {
+                $data['title'] = 'Entrer un nouveau produit:';
+
         }
 }
